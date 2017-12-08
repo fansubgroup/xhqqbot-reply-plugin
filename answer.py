@@ -77,60 +77,61 @@ def onQQMessage(bot, contact, member, content):
                 # print(r_result['values'])
                 # print(type(r_result['values']))
                 bot.SendTo(contact, r_result['values']['text'])
-    else:
-        if '资料' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 玄小妹温馨提示你，学习资料可以参考群文件')
-        if '开车' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name +
-                       ' 上山的路已经被封，随时可以开车!(不对，都停下来，不准开车!)')
-        if '问' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 问什么问，交学费没有(手动滑稽)？')
-        if '怎么' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 什么怎么?怎么什么?')
-        if '拿站' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 起床拿站了拿站了!')
-        if '无聊' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name +
-                       ' 无聊就多看看UNIX环境高级编程三卷本和TCP/IP三卷本!')
-        if '大家好' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 新人是不是要爆照先？')
-        if '问题' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 有什么问题@初音过去 ？')
-        if '能不能' in content and member.name != '玄小妹':
-            bot.SendTo(contact, '@' + member.name + ' 不能')
-        if 'http' in content and member.name != '玄小妹':
-            if member.qq != '2672406516':
-                #bot.SendTo(contact, '@'+member.name+' 发链接枪毙五分钟')
-                gl = bot.List('group', contact.name)
-                if gl:
-                    group = gl[0]
-                    bot.Update(group)
-                    kickt = member.name
-                    membs = bot.List(group, kickt)
-                    # print(dir(membs))
-                    # print(kickt)
-                    # print(membs)
-                    if membs:
-                        pass
-                        #bot.SendTo(contact, '@' + kickt + ' 拖出去枪毙五分钟')
-                        #bot.GroupKick(group, membs)
-                    else:
-                        pass
-                        #bot.SendTo(contact, kickt + '么有这个人啊～')
-        if '傻逼' in content and member.name != '玄小妹':
-            if member.qq != '2672406516':
-                #bot.SendTo(contact, '@'+member.name+' 发链接枪毙五分钟')
-                gl = bot.List('group', contact.name)
-                if gl:
-                    group = gl[0]
-                    bot.Update(group)
-                    kickt = member.name
-                    membs = bot.List(group, kickt)
-                    # print(dir(membs))
-                    # print(kickt)
-                    # print(membs)
-                    if membs:
-                        bot.SendTo(contact, '@' + kickt + ' 拖出去枪毙五分钟')
-                        bot.GroupKick(group, membs)
-                    else:
-                        bot.SendTo(contact, kickt + '么有这个人啊～')
+#    else:
+#        if '资料' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 玄小妹温馨提示你，学习资料可以参考群文件')
+#        if '开车' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name +
+#                       ' 上山的路已经被封，随时可以开车!(不对，都停下来，不准开车!)')
+#        if '问' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 问什么问，交学费没有(手动滑稽)？')
+#        if '怎么' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 什么怎么?怎么什么?')
+#        if '拿站' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 起床拿站了拿站了!')
+#        if '无聊' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name +
+#                       ' 无聊就多看看UNIX环境高级编程三卷本和TCP/IP三卷本!')
+#        if '大家好' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 新人是不是要爆照先？')
+#        if '问题' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 有什么问题@初音过去 ？')
+#        if '能不能' in content and member.name != '玄小妹':
+#            bot.SendTo(contact, '@' + member.name + ' 不能')
+#        if 'http' in content and member.name != '玄小妹':
+#            if member.qq != '2672406516':
+#                #bot.SendTo(contact, '@'+member.name+' 发链接枪毙五分钟')
+#                gl = bot.List('group', contact.name)
+#                if gl:
+#                    group = gl[0]
+#                    bot.Update(group)
+#                    kickt = member.name
+#                    membs = bot.List(group, kickt)
+#                    # print(dir(membs))
+#                    # print(kickt)
+#                    # print(membs)
+#                    if membs:
+#                        pass
+#                        #bot.SendTo(contact, '@' + kickt + ' 拖出去枪毙五分钟')
+#                        #bot.GroupKick(group, membs)
+#                    else:
+#                        pass
+#                        #bot.SendTo(contact, kickt + '么有这个人啊～')
+#        if '傻逼' in content and member.name != '玄小妹':
+#            if member.qq != '2672406516':
+#                #bot.SendTo(contact, '@'+member.name+' 发链接枪毙五分钟')
+#                gl = bot.List('group', contact.name)
+#                if gl:
+#                    group = gl[0]
+#                    bot.Update(group)
+#                    kickt = member.name
+#                    membs = bot.List(group, kickt)
+#                    # print(dir(membs))
+#                    # print(kickt)
+#                    # print(membs)
+#                    if membs:
+#                        bot.SendTo(contact, '@' + kickt + ' 拖出去枪毙五分钟')
+#                        bot.GroupKick(group, membs)
+#                    else:
+#                        bot.SendTo(contact, kickt + '么有这个人啊～')
+#
